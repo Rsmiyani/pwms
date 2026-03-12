@@ -73,13 +73,19 @@ A comprehensive web-based platform for managing political campaign workers, coor
 
 ---
 
+## Live Demo
+
+🌐 **[https://pwms-page.rf.gd](https://pwms-page.rf.gd/login.php)**
+
+| Role | Phone | Password |
+|------|-------|----------|
+| Admin | `9999999999` | `admin123` |
+
+---
+
 ## Screenshots
 
 > Add screenshots to the `assets/images/` folder and reference them here.
-
-```
-Coming soon...
-```
 
 ---
 
