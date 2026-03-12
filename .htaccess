@@ -1,0 +1,29 @@
+# Prevent directory listing
+Options -Indexes
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Force HTTPS (InfinityFree provides free SSL)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Deny access to sensitive files
+<FilesMatch "\.(sql|md|gitignore)$">
+    Require all denied
+</FilesMatch>
+
+# Deny access to config and database directories
+RewriteRule ^config/ - [F,L]
+RewriteRule ^database/ - [F,L]
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+</IfModule>

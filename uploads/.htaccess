@@ -1,0 +1,19 @@
+# Prevent directory listing
+Options -Indexes
+
+# Only allow image files to be accessed
+<FilesMatch "\.(?i:jpg|jpeg|png|gif|webp)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Deny everything else (especially PHP execution)
+<FilesMatch "\.(?i:php|phtml|php3|php4|php5|phps|pht|shtml)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Prevent script execution via handler manipulation
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>

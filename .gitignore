@@ -1,0 +1,26 @@
+# Uploads (user-generated content)
+uploads/proofs/*
+!uploads/proofs/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment / Config overrides
+.env
+config/db.local.php
+
+# Logs
+*.log
+error_log
+
+# Compiled / Cache
+*.cache
