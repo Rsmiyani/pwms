@@ -371,10 +371,5 @@ Sample worker accounts are also created by `setup.sql` — check the SQL file fo
 
 ---
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 
